@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Process Book</title>
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- ICONS BOXICONS -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="assets/js/dotplot.js"></script>
+
+    </head> 
+    <body>
+        <!-- ===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <a href="#" class="nav__logo">COS30045 Data Visualisation</a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu-alt-right'></i>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Introduction</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Chart</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Discover</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- ===== HOME =====-->
+            <div class="home">
+                <div class="parallax home__parallax home__parallax-img1" data-rellax-speed="-9"></div>
+                <div class="parallax home__parallax home__parallax-img2" data-rellax-speed="-7"></div>
+                <div class="parallax home__parallax home__parallax-img3" data-rellax-speed="-6"></div>
+                <div class="parallax home__parallax home__parallax-img4" data-rellax-speed="-3"></div>
+
+                <h1 class="parallax home__title" data-rellax-speed="-6">Process Book</h1>
+                <span class="parallax home__subtitle" data-rellax-speed="-5">Duc Thuan Tran</span> 
+
+                <div class="home__scroll">
+                   <a href="#section"><i class='bx bx-mouse'></i></a>
+                </div>
+            </div>
+
+            <!-- ===== Introduction =====-->
+            <section class="l-section" id="section">
+                <div class="section">
+                    <div class="section__data">
+                        <h2 class="section__title">Introduction</h2>
+                        <p class="section__text"> 
+                            Welcome to our website where we explore the intricate connections between diet, obesity, and life expectancy through innovative data visualizations.
+                             Utilizing dot plots and maps, our visual tools highlight the effects of dietary choices on public health across different countries. Our dot plots
+                              compare food consumption with obesity rates, while our maps illustrate the geographic distribution of obesity and its impact on life expectancy.
+                               Dive into our processed and curated data to discover how global dietary patterns influence health outcomes, providing valuable insights for
+                                policymakers, researchers, and the public interested in nutrition and health.
+                        </p>
+                    </div>
+        
+                    <img src="assets/img/imgm.jpg" alt="" class="section__img">
+                </div>
+            </section>
+        
+        <div class="dashboard"> 
+              <!-- Placeholder for the dot plot chart -->
+            <section id="chart-container">
+                <h2>The Changing Global Diet - Food Supply Diversity</h2>
+                <div id="dot-plot">
+                    <script>
+                        dotplot.init()
+                    </script>
+                </div>
+              </section>
+              
+              <aside>
+                <!-- Placeholder for the country diversity rankings and selection controls -->
+                <div id="select-measurement">
+                  <h3>Select Measurement:</h3>
+                  <label>
+                    <input type="radio" name="selection" value="calories"> Calories
+                </label>
+                <label>
+                    <input type="radio" name="selection" value="protein"> Protein
+                </label>
+                <label>
+                    <input type="radio" name="selection" value="fat"> Fat
+                </label>
+                <label>
+                    <input type="radio" name="selection" value="foodWeight"> Food Weight
+                </label>
+                </div>
+                
+                <!-- Placeholder for the world map -->
+                <section id="map-section">
+                  <h2>Diversity of food supply</h2>
+                  <input type="text" id="map-search" placeholder="Search Map">
+                  <button id="reset-map">Reset</button>
+                  <a href="map.html" target="_blank" style="display: block; margin-top: 10px;">View Full-Size Map</a>
+                  <div id="map-container">
+                    <img src="world.svg" alt="World Map" id="svg-object">
+                  </div>
+                </section>
+              
+              </aside>
+            </div>
+        </main>
+
+        <!-- RELLAX JS -->
+        <script src="assets/js/rellax.min.js"></script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+
+        <!-- SCROLL REVEAL -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- MAIN JS -->
+        <script src="assets/js/main.js"></script>
+
+    </body>
+
+    <footer>
+        <p>&copy; 2024 by Duc Thuan Tran. All rights reserved.</p>
+      </footer>
+</html>
