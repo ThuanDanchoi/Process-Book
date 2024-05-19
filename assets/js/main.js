@@ -40,18 +40,3 @@ sr.reveal('.section__data',{origin: 'left',distance: '70px'});
 
 /*Imgs*/
 sr.reveal('.section__img',{origin: 'left',distance: '90px',delay: 200}); 
-
-
-// ScrollReveal configuration
-ScrollReveal().reveal('#chart-container, #map-section, #select-measurement', {
-    // Adjustments to the animation
-    distance: '50px',
-    duration: 1500,
-    easing: 'ease-in-out',
-    interval: 300,
-    // This will make the elements fade in from the bottom
-    origin: 'bottom',
-    // Delay the animation until the element is in the viewport
-    viewFactor: 0.5
-  });
-  

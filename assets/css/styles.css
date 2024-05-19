@@ -1,376 +1,280 @@
-/*===== GOGGLE FONTS =====*/
+/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-/*===== VARIABLES SCSS =====*/
-/*===== VARIABLES CSS =====*/
-/*=== Colores ===*/
-:root {
-  --first-color: #0396A6;
-  --dark-color: #000;
-  --white-color: #F2F2F2;
-}
 
-/*=== Fuente y tipografia ===*/
+/*===== VARIABLES CSS =====*/
+ 
+/*=== Fonts and typography ===*/
 :root {
-  --body-font: 'Open Sans', sans-serif;
-  --biggest-font-size: 3.5rem;
-  --h2-font-size: 1.25rem;
-  --normal-font-size: 0.938rem;
+    --body-font: 'Open Sans', sans-serif;
+    --biggest-font-size: 3.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
 }
 
 @media screen and (min-width: 768px) {
-  :root {
-    --biggest-font-size: 7rem;
-    --h2-font-size: 1.5rem;
-    --normal-font-size: 1rem;
-  }
+    :root {
+        --biggest-font-size: 7rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+    }
 }
 
-/*=== z index ===*/
+/*=== z-index levels ===*/
 :root {
-  --z-back: -10;
-  --z-normal: 1;
-  --z-tooltip: 10;
-  --z-fixed: 100;
-  --z-modal: 1000;
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
 }
 
-/*===== BASE =====*/
+/*===== BASE STYLES =====*/
 *, ::before, ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  height: 100%;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background-color:#FAF0E6; /* Set background to black */
+    color: #800000; /* Set text color to white */
+    scroll-behavior: smooth;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
 
 h1, h2, h3, p {
-  margin: 0;
+    margin: 0;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    list-style: none;
+    padding: 0;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
+    color: var(--white-color);
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /*===== LAYOUT =====*/
 .bd-grid {
-  max-width: 1200px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .l-header {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  z-index: var(--z-modal);
+    position: fixed;  /* Đặt thanh navbar cố định */
+    width: 100%;      /* Đảm bảo rằng thanh navbar trải dài toàn bộ chiều rộng của trang */
+    z-index: 1000;    /* Đảm bảo rằng thanh navbar luôn ở trên cùng các thành phần khác */
+    background-color: transparent; /* Thêm nền mờ cho thanh navbar để nhìn thấy nội dung phía sau khi kéo */
 }
+
 
 /*===== NAVBAR =====*/
 .nav {
-  height: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
-  .nav__menu {
-    position: fixed;
-    left: 0%;
-    top: -100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    height: 40%;
-    padding: 2rem;
-    text-align: center;
-    z-index: var(--z-fixed);
-    -webkit-transition: .3s;
-    transition: .3s;
-  }
+    .nav__menu {
+        position: fixed;
+        left: 0%;
+        top: -100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 40%;
+        padding: 2rem;
+        text-align: center;
+        z-index: var(--z-fixed);
+        transition: .3s;
+    }
 }
 
 .nav__logo {
-  color: var(--white-color);
-  font-size: 2rem; 
+    color: var(--white-color);
 }
 
 .nav__item {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .nav__link {
-  color: var(--white-color);
+    color: var(--white-color);
 }
 
 .nav__toggle {
-  font-size: 1.5rem;
-  color: var(--white-color);
-  cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    cursor: pointer;
 }
 
-/*=== Show menu ===*/
 .show {
-  top: 3rem;
+    top: 3rem;
 }
 
-/*===== HOME =====*/
+/*===== HOME SECTION =====*/
 .home {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .home__parallax {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.home__parallax-img1 {
-  background-image: url("/assets/img/imgm1.png");
-  z-index: var(--z-normal);
-}
-
-.home__parallax-img2 {
-  background-image: url("/assets/img/imgm2.png");
-  z-index: var(--z-tooltip);
-}
-
-.home__parallax-img3 {
-  background-image: url("/assets/img/imgm3.png");
-  z-index: var(--z-fixed);
-}
-
-.home__parallax-img4 {
-  background-image: url("/assets/img/imgm4.png");
-  z-index: var(--z-fixed);
-}
+.home__parallax {
+    background-image: url("/assets/image/background.jpg");
+  }
+  
 
 .home__title, .home__subtitle {
-  position: absolute;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: var(--white-color);
+    position:absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--white-color);
 }
 
 .home__title {
-  top: 32%;
-  font-size: var(--biggest-font-size);
-  z-index: var(--z-normal);
+    top: 32%;
+    font-size: var(--biggest-font-size);
+    z-index: var(--z-normal);
 }
 
 .home__subtitle {
-  top: 44%;
-  font-size: var(--h2-font-size);
-  font-weight: bold;
-  z-index: var(--z-tooltip);
+    top: 44%;
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+    z-index: var(--z-tooltip);
 }
 
 .home__scroll {
-  position: absolute;
-  bottom: 2.5rem;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 1.5rem;
-  z-index: var(--z-modal);
-}
-
-.home__scroll .bx-mouse {
-  color: var(--white-color);
+    position: absolute;
+    bottom: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: var(--z-modal);
+    color: var(--white-color);
 }
 
 /*===== SECTION =====*/
 .l-section {
-  background-color: var(--dark-color);
+    background-color: #FAF0E6;
 }
 
 .section {
-  height: 100vh;
-  max-width: 950px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: 2rem 0;
-  color: var(--white-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    height: 100vh;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 0;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .section__data {
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .section__title {
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
-  margin-bottom: 1rem;
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    margin-bottom: 1rem;
 }
 
 .section__img {
-  width: 285px;
-  border-radius: .5rem;
+    width: 285px;
+    border-radius: .5rem;
 }
 
 /*===== MEDIA QUERIES =====*/
 @media screen and (min-width: 760px) {
-  .nav {
-    height: 4rem;
-  }
-  .nav__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav__item {
-    margin-right: 3rem;
-    margin-bottom: 0;
-  }
-  .nav__toggle {
-    display: none;
-  }
-  .home__title {
-    top: 27%;
-  }
-  .home__subtitle {
-    top: 50%;
-  }
-  .section {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .section__text {
-    padding-right: 4rem;
-  }
-  .section__img {
-    width: 470px;
-  }
+    .nav {
+        height: 4rem;
+    }
+    .nav__list {
+        display: flex;
+    }
+    .nav__item {
+        margin-right: 3rem;
+        margin-bottom: 0;
+    }
+    .nav__toggle {
+        display: none;
+    }
+    .home__title {
+        top: 27%;
+    }
+    .home__subtitle {
+        top: 50%;
+    }
+    .section {
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section__text {
+        padding-right: 4rem;
+    }
+    .section__img {
+        width: 470px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  .bd-grid {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
- 
- /* Assuming that chart-container and the aside elements are wrapped in a container with class .dashboard */
-.dashboard {
-  display: flex;
-  flex-wrap: wrap; /* This allows for wrapping on smaller screens */
-  justify-content: space-between; /* This separates the elements nicely */
-  align-items: flex-start; /* This aligns items to the top of the container */
-  background-color: var(--dark-color);
+    .bd-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-.dashboard h2, .dashboard h3, .dashboard label {
-  color: var(--white-color); /* This should be your variable for white color */
+#description, #scatterplot-container, #sankey-container {
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-#chart-container {
-  flex: 1; /* Allows the chart container to grow and take up available space */
-  padding: 1em;
-  max-width: calc(60% - 2em); /* Adjust the percentage as needed, subtracting the padding */
+#controls {
+  padding: 10px;
+  color: #800000;
+  background-color: #FAF0E6; /* Slightly transparent black background */
 }
 
-aside {
-  flex: 1; /* Allows the aside section to grow and take up available space */
-  padding: 1em;
-  max-width: calc(40% - 2em); /* Adjust the percentage as needed, subtracting the padding */
+.controls-row label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-/* Add media queries for responsiveness */
-@media (max-width: 768px) {
-  .dashboard {
-    flex-direction: column;
-  }
-  
-  #chart-container,
-  aside {
-    max-width: 100%;
-  }
+button {
+  background-color: #FAF0E6;
+  color: #800000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-/* Keep your existing styles for #dot-plot, #map-container, and #svg-object */
-#dot-plot {
-  height: 575px;
-  background-color: #e9e9e9;
+button:hover {
+  background-color: orangered;
 }
 
-#map-container {
-  width: 100%;
-  height: 485px;
-  border: 1px solid #ccc;
-  overflow: hidden;
-}
-
-#svg-object {
-  width: 100%;
-  height: 100%; 
-  display: block;  
-}
- 
-footer {
-  text-align: center;
-  padding: 1em;
-  background-color: black;
-  color: var(--white-color);
-}
